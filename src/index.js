@@ -32,6 +32,8 @@ buttonStart.addEventListener('click', onColorStart);
 function onColorStart(event) {
 
     timerColor = setInterval(randomColor, 1000);
+    buttonStart.setAttribute('disabled', 'true');
+    //disabled="true"
 
 
 }
@@ -48,6 +50,7 @@ buttonStop.addEventListener('click', onColorStop);
 function onColorStop(event) {
     getBody.style.backgroundColor = `${colors[color]}`;
     clearInterval(timerColor);
+    buttonStart.removeAttribute('disabled');
 }
 
 
